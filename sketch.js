@@ -1,4 +1,4 @@
-
+//edited
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -7,10 +7,7 @@ const Constraint = Matter.Constraint;
 var block1,block2,block3;
 var block1s,block2s,block3s;
 
-function preload()
-{
-	
-}
+
 
 function setup() {
 	createCanvas(800, 700);
@@ -26,11 +23,11 @@ function setup() {
 	bob4 = new Bob(445,475);
 	bob5 = new Bob(510,475);
 	ground = new Ground(380,175,600,25);
-	rope1 = new Rope(bob1.body,ground.body,-bob1);
-	rope2 = new Rope(bob2.body,ground.body,-bob2);
-	rope3 = new Rope(bob3.body,ground.body,-bob3);
-	rope4 = new Rope(bob4.body,ground.body,-bob4);
-	rope5 = new Rope(bob5.body,ground.body,-bob5);
+	rope1 = new Rope(bob1.body,ground.body,-85*2, 0);
+	rope2 = new Rope(bob2.body,ground.body,-85, 0);
+	rope3 = new Rope(bob3.body,ground.body,0, 0);
+	rope4 = new Rope(bob4.body,ground.body,85, 0);
+	rope5 = new Rope(bob5.body,ground.body,85*2, 0);
 
 
 	 block2s=createSprite(92, 387, 25, 400);
@@ -76,9 +73,10 @@ function draw() {
 
 function keyPressed() {
 	if(keyCode === UP_ARROW) {
-		Matter.Body.applyForce(bob5.body,bob5.body.position,{x:50,y:-20});
+		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-100,y:-50});
 	}
 }
+
 
 
 
